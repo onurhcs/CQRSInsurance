@@ -1,0 +1,50 @@
+﻿@model CQRSInsurance.Models.IndexViewModel
+
+<div class="container-fluid bg-light about pb-5">
+    <div class="container pb-5">
+        <div class="row g-5">
+            <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+                @if (Model.CompanyInfos != null && Model.CompanyInfos.Any())
+                {
+                    <div class="about-item-content bg-white rounded p-5 h-100">
+                        <h4 class="text-primary">Şirketimiz Hakkında</h4>
+                        <h1 class="display-4 mb-4">Geniş Kapsamlı Koruma Çözümleri</h1>
+                        @foreach (var item in Model.CompanyInfos)
+                        {
+                            <p>@item.Description</p>
+                            <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>@item.Title</p>
+                        }
+                        <p class="text-dark mb-4"><i class="fa fa-check text-primary me-3"></i>Hayat sigortamız esnek bir yapıya sahiptir.</p>
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="#">Daha Fazla Bilgi</a>
+                    </div>
+                }
+            </div>
+            <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
+                @if (Model.Statistics != null && Model.Statistics.Any())
+                {
+                    <div class="bg-white rounded p-5 h-100">
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-12">
+                                <div class="rounded bg-light">
+                                    <img src="~/Sigorta/img/about-1.png" class="img-fluid rounded w-100" alt="Şirketimiz Hakkında">
+                                </div>
+                            </div>
+                            @foreach (var item in Model.Statistics)
+                            {
+                                <div class="col-sm-6">
+                                    <div class="counter-item bg-light rounded p-3 h-100">
+                                        <div class="counter-counting">
+                                            <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">@item.Value</span>
+                                            <span class="h1 fw-bold text-primary">+</span>
+                                        </div>
+                                        <h4 class="mb-0 text-dark">@item.Title</h4>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

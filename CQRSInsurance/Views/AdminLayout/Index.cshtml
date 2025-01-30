@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Html.PartialAsync("~/Views/AdminLayout/PartialHead.cshtml")
+
+
+
+
+<body id="page-top">
+    <div id="wrapper">
+        @await Html.PartialAsync("~/Views/AdminLayout/PartialSidebar.cshtml")
+
+
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <div id="content">
+                @await Html.PartialAsync("~/Views/AdminLayout/PartialNavbar.cshtml")
+
+                <div class="container-fluid">
+
+                    <div class="card shadow mb-4">
+
+                        @RenderBody()
+
+                    </div>
+                </div>
+            </div>
+            @await Html.PartialAsync("~/Views/AdminLayout/PartialFooter.cshtml")
+
+        </div>
+    </div>
+    @await Html.PartialAsync("~/Views/AdminLayout/PartialScript.cshtml")
+
+</body>
+</html>

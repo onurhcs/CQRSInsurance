@@ -1,0 +1,110 @@
+﻿<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar Logo -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">LifeSure Admin <sup></sup></div>
+    </a>
+    <hr class="sidebar-divider my-0">
+
+    <!-- Gösterge Paneli -->
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Home" asp-action="Index">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Gösterge Paneli</span>
+        </a>
+    </li>
+
+    <hr class="sidebar-divider">
+
+    <!-- Yönetim -->
+    <div class="sidebar-heading">
+        Yönetim
+    </div>
+
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Companyİnfo" asp-action="CompanyInfoList">
+            <i class="fas fa-building"></i>
+            <span>Şirket Bilgileri</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Feature" asp-action="FeatureList">
+            <i class="fas fa-star"></i>
+            <span>Öne Çıkanlar</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Service" asp-action="ServiceList">
+            <i class="fas fa-tools"></i>
+            <span>Hizmetler</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="MessageAdmın" asp-action="MessageList">
+            <i class="fas fa-envelope"></i>
+            <span>Gelen Mesajlar</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Testimonial" asp-action="TestimonialList">
+            <i class="fas fa-user-check"></i>
+            <span>Müşteri Yorumları</span>
+        </a>
+    </li>
+
+
+    <hr class="sidebar-divider">
+
+    <!-- Kullanıcı İşlemleri -->
+    <div class="sidebar-heading">
+        Kullanıcı İşlemleri
+    </div>
+
+    <!-- Giriş & Kayıt -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
+           aria-expanded="false" aria-controls="collapsePages">
+            <i class="fas fa-fw fa-user"></i>
+            <span>Kullanıcı İşlemleri</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Hesap Yönetimi:</h6>
+                <a class="collapse-item" href="login.html">Giriş Yap</a>
+                <a class="collapse-item" href="register.html">Kayıt Ol</a>
+                <a class="collapse-item" href="forgot-password.html">Şifreyi Unuttum</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Grafikler -->
+    <li class="nav-item">
+        <a class="nav-link" href="charts.html">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Grafikler</span>
+        </a>
+    </li>
+
+    <!-- Tablolar -->
+    <li class="nav-item">
+        <a class="nav-link" href="tables.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Tablolar</span>
+        </a>
+    </li>
+
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggle -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+
+</ul>

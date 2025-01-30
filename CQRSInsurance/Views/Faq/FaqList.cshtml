@@ -1,0 +1,40 @@
+﻿@model List<CQRSInsurance.ModeiatorDesignPattern.Results.FaqResults.GetFaqQueryResult>
+
+@{
+    ViewData["Title"] = "FaqList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+
+<link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<table class="table table-hover">
+    <tr>
+        <th>#</th>
+        <th>Müşteri Adı</th>
+        <th>E-posta</th>
+        <th>Telefon</th>
+        <th>Proje</th>
+        <th>Konu</th>
+        <th>Mesaj</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FaqId</td>
+            <td>@item.Question</td>
+            <td>@item.Answer</td>
+            <td>@item.Icon</td>
+            <td><a href="/Faqs/DeleteFaq/@item.FaqId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Faqs/UpdateFaq/@item.FaqId" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Faqs/CreateFaq/" class="btn btn-info">Yeni Müşteri</a>
+
+

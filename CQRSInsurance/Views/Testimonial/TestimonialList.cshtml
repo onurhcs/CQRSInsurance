@@ -1,0 +1,47 @@
+﻿@model List<CQRSInsurance.CQRSDesignPattern.Results.TestimonialResults.GetTestimonialQueryResult>
+
+@{
+    ViewData["Title"] = "TestimonialList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>CustomerName</th>
+            <th>Job Title</th>
+            <th>Rating</th>
+            <th>Comment</th>
+            <th>Image</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TestimonialId</td>
+                <td>@item.CustomerName</td>
+                <td>@item.JobTitle</td>
+                <td>@item.Rating</td>
+                <td>@item.Comment</td>
+                <td>
+                    <img src="@item.Image" alt="Hizmet Görseli" class="img-fluid rounded"
+                         style="width: 100px; height: auto;">
+                </td>
+                <td>
+                    <a href="/Feature/DeleteFeature/@item.TestimonialId" class="btn btn-danger">Sil</a>
+                </td>
+                <td>
+                    <a href="/Feature/UpdateFeature/@item.TestimonialId" class="btn btn-success">Güncelle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Features/CreateFeature/" class="btn btn-info">Yeni Özellik Ekle</a>

@@ -1,0 +1,38 @@
+﻿@model List<CQRSInsurance.ModeiatorDesignPattern.Results.MessageResults.GetMessageQueryResult>
+
+@{
+    ViewData["Title"] = "MessageList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<table class="table table-hover">
+    <tr>
+        <th>#</th>
+        <th>Müşteri Adı</th>
+        <th>E-posta</th>
+        <th>Telefon</th>
+        <th>Proje</th>
+        <th>Konu</th>
+        <th>Mesaj</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MessageId</td>
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+            <td>@item.Phone</td>
+            <td>@item.Project</td>
+            <td>@item.Subject</td>
+            <td>@item.MessageText</td>
+            <td><a href="/Messages/DeleteMessage/@item.MessageId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Messages/UpdateMessage/@item.MessageId" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Messages/CreateMessage/" class="btn btn-info">Yeni Müşteri</a>
